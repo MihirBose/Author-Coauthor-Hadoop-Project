@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Authors database</title>
+</head>
+
+<body>
+    <h1>Authors database website</h1>
+
+    <form action="{{ url_for('getCoauthors') }}" method="POST">
+    <p>Select an author:</p>
+    <select name="author_list" id="author_list">
+        <option>Select a value</option>
+        {% for auth in authors %}
+            <option value="{{ auth[0] }}">{{ auth[0] }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <input type="submit" value='Get Coauthors'>
+    </form>
+</body>
+
+</html>
